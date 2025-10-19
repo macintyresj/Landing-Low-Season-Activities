@@ -16,7 +16,7 @@ const games = [
   },
  {
     title: "Escape Rooms",
-    image: "",
+    image: "assets/img/escapeRoom.png",
     link: "Escape_Room.html",
   },
   {
@@ -45,4 +45,5 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
