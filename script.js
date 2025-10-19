@@ -14,6 +14,11 @@ const games = [
     image: "assets/img/preguntados.png",
     link: "https://macintyresj.github.io/FSO-Games-Trivia/",
   },
+ {
+    title: "Escape Rooms",
+    image: "",
+    link: "Escape_Room.html",
+  },
   {
     title: "First Shout",
     image: "assets/img/firstshout.png",
@@ -40,3 +45,4 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
