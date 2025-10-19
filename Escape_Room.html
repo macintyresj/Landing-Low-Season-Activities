@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronómetro Escape Room</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff;
+    }
+    .container {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00e0ff55;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    input, button, select {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      cursor: pointer;
+      background: #00e0ff;
+      color: #000;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #00aacc;
+    }
+    #timer {
+      font-size: 48px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+      color: #fff;
+    }
+    th, td {
+      border: 1px solid #555;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #00aacc;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Escape Room - Cronómetro</h1>
+
+  <div class="container">
+    <label>Duración (minutos): </label>
+    <input type="number" id="minutesInput" min="1" value="30">
+    <button onclick="startTimer()">Iniciar</button>
+
+    <div id="timer">00:00.00</div>
+
+    <label>Equipo:</label>
+    <select id="teamName">
+      <option value="">Seleccionar equipo</option>
+      <option value="Rojo">Rojo 🔴</option>
+      <option value="Azul">Azul 🔵</option>
+      <option value="Verde">Verde 🟢</option>
+      <option value="Violeta">Violeta 🟣</option>
+    </select>
+    <button onclick="registerTime()">Registrar tiempo</button>
+
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>Equipo</th>
+          <th>Tiempo restante</th>
+          <th>Puntos</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    let timerInterval;
+    let remainingTime = 0; // en centésimas de segundo
+    let totalTime = 0; // duración total del cronómetro en centésimas
+    let isRunning = false;
+    const results = [];
+
+    function startTimer() {
+      const minutes = parseInt(document.getElementById("minutesInput").value);
+      totalTime = minutes * 60 * 100; // centésimas
+      remainingTime = totalTime;
+      clearInterval(timerInterval);
+      isRunning = true;
+      updateDisplay();
+
+      timerInterval = setInterval(() => {
+        if (remainingTime > 0) {
+          remainingTime--;
+          updateDisplay();
+        } else {
+          clearInterval(timerInterval);
+          isRunning = false;
+          alert("¡Tiempo agotado!");
+        }
+      }, 10);
+    }
+
+    function updateDisplay() {
+      const totalSeconds = Math.floor(remainingTime / 100);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      const centesimas = remainingTime % 100;
+      document.getElementById("timer").textContent =
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${centesimas.toString().padStart(2, '0')}`;
+    }
+
+    function registerTime() {
+      if (!isRunning) {
+        alert("El cronómetro no está en marcha.");
+        return;
+      }
+
+      const team = document.getElementById("teamName").value;
+      if (!team) {
+        alert("Por favor, seleccione un equipo.");
+        return;
+      }
+
+      const timeLeftSec = remainingTime / 100; // segundos restantes
+      const points = Math.round((timeLeftSec + 10) * 1000); // ✅ suma los 10 segundos extra
+
+      const min = Math.floor(timeLeftSec / 60);
+      const sec = Math.floor(timeLeftSec % 60);
+      const cent = Math.floor((remainingTime % 100));
+      const formattedTime = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}.${cent.toString().padStart(2, '0')}`;
+
+      results.push({ team, formattedTime, points });
+      updateTable();
+
+      document.getElementById("teamName").value = "";
+    }
+
+    function updateTable() {
+      const tableBody = document.querySelector("#resultsTable tbody");
+      tableBody.innerHTML = "";
+
+      // Ordenar por puntos descendente (ranking)
+      results.sort((a, b) => b.points - a.points);
+
+      for (const r of results) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${r.team}</td><td>${r.formattedTime}</td><td>${r.points}</td>`;
+        tableBody.appendChild(row);
+      }
+    }
+  </script>
+
+</body>
+</html>
