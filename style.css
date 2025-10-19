@@ -1,0 +1,133 @@
+:root {
+  --onyx: #434343ff;
+  --sienna: #862B0Fff;
+  --french-gray: #B8B9C6ff;
+  --white: #FEFDFDff;
+  --amaranth-pink: #F19DBEff;
+  --moonstone: #54B4CCff;
+  --citron: #CCD374ff;
+  --orange-crayola: #EF7B48ff;
+  --blue-munsell: #36869Aff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--french-gray);
+  color: var(--onyx);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* === BLOQUES DE COLOR DE FONDO === */
+.color-blocks {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50vh);
+}
+
+.color-blocks::before,
+.color-blocks::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  /* backdrop-filter: blur(4px); */
+}
+
+.color-blocks div {
+  width: 100%;
+  height: 100%;
+}
+
+/* colores aleatorios */
+.color-blocks div:nth-child(4n+1) { background-color: var(--amaranth-pink); }
+.color-blocks div:nth-child(4n+2) { background-color: var(--moonstone); }
+.color-blocks div:nth-child(4n+3) { background-color: var(--citron); }
+.color-blocks div:nth-child(4n+4) { background-color: var(--orange-crayola); }
+
+/* === HEADER === */
+header {
+  text-align: center;
+  /* background-color: var(--onyx); */
+  color: var(--onix);
+  text-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.15); */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: var(--french-gray);
+  opacity: 0.9;
+}
+
+/* === MAIN === */
+.games-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+    gap: 25px;
+    padding: 50px 40px;
+    max-width: 90vw;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+.game-card {
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(67, 67, 67, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--moonstone);
+  box-shadow: 0 8px 20px rgba(84, 180, 204, 0.2);
+}
+
+.game-card img {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.game-card h3 {
+  margin: 15px;
+  color: var(--sienna);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--onyx);
+  color: var(--french-gray);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  z-index: 1;
+  position: relative;
+}
