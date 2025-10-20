@@ -27,7 +27,7 @@ const games = [
   { 
     title: "I sit, I stand",
     image: "assets/img/GettyImages-553017003.jpg",
-    link: "https://macintyresj.github.io/FSO-Games-Trivia-Tablero-/",
+    link: "https://people.ey.com/:p:/r/personal/agustin_villar_gds_ey_com/_layouts/15/Doc.aspx?sourcedoc=%7BAE5E303D-23D6-4500-A296-B62CEC1F1232%7D&file=FSO%20Games%20-%20Support.pptx&action=edit&mobileredirect=true",
   },
 
 ];
@@ -50,6 +50,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
