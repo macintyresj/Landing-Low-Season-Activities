@@ -1,6 +1,6 @@
 const games = [
     {
-    title: "Aproximación",
+    title: "Aproximation",
     image: "",
     link: "",
   },
@@ -24,6 +24,11 @@ const games = [
     image: "assets/img/firstshout.png",
     link: "https://macintyresj.github.io/FSO-Games---First-Shout/",
   }
+  { 
+    title: "I sit, I stand",
+    image: "assets/img/GettyImages-553017003.jpg",
+    link: "https://macintyresj.github.io/FSO-Games-Trivia-Tablero-/",
+  },
 
 ];
 // Crear bloques de color
@@ -45,5 +50,6 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
