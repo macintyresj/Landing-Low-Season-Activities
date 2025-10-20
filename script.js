@@ -23,7 +23,7 @@ const games = [
     title: "First Shout",
     image: "assets/img/firstshout.png",
     link: "https://macintyresj.github.io/FSO-Games---First-Shout/",
-  }
+  },
   { 
     title: "I sit, I stand",
     image: "assets/img/GettyImages-553017003.jpg",
@@ -50,6 +50,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
