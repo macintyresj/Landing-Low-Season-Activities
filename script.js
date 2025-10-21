@@ -37,7 +37,7 @@ const games = [
   { 
     title: "I sit, I stand",
     image: "assets/img/GettyImages-553017003.jpg",
-    link: "https://people.ey.com/:p:/r/personal/agustin_villar_gds_ey_com/_layouts/15/Doc.aspx?sourcedoc=%7BAE5E303D-23D6-4500-A296-B62CEC1F1232%7D&file=FSO%20Games%20-%20Support.pptx&action=edit&mobileredirect=true",
+    link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro%2FI%20sit%2C%20I%20stand%20Instructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro",
   },
       {
     title: "T-Shirt Game",
@@ -65,6 +65,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
