@@ -27,17 +27,12 @@ const games = [
   {
     title: "Act it out",
     image: "assets/img/charades.jpg",
-    link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FDigalo%20con%20Mimica%2Finstructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FDigalo%20con%20Mimica",
+    link: "actItOut/actItOut.html",
   },
  {
     title: "The Word Game",
     image: "assets/img/wordGame.png",
     link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FEl%20juego%20de%20las%20palabras%2FThe%20word%20game%20%2D%20Instructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FEl%20juego%20de%20las%20palabras",
-  },
-  { 
-    title: "I sit, I stand",
-    image: "assets/img/GettyImages-553017003.jpg",
-    link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro%2FI%20sit%2C%20I%20stand%20Instructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro",
   },
       {
     title: "T-Shirt Game",
@@ -59,6 +54,11 @@ const games = [
     image: "assets/img/numbers.png",
     link: "",     
   },
+{ 
+    title: "I sit, I stand",
+    image: "assets/img/GettyImages-553017003.jpg",
+    link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro%2FI%20sit%2C%20I%20stand%20Instructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FMe%20siento%20me%20paro",
+  },
 ];
 // Crear bloques de color
 const bg = document.querySelector('.color-blocks');
@@ -79,6 +79,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
