@@ -7,7 +7,7 @@ const games = [
     {
     title: "Aproximation",
     image:  "assets/img/Aproximation.jpg",
-    link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FAproximacion%2FAproximation%20%2D%20Instructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FAproximacion",
+    link: "https://people.ey.com/:b:/r/personal/agustin_villar_gds_ey_com/Documents/FY%2026/ADMIN/ACTIVIDADES/Aproximacion/preguntas.pdf?csf=1&web=1&e=7lVMwB",
   },
   {
     title: "Jeopardy",
@@ -84,6 +84,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
