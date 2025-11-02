@@ -44,7 +44,21 @@ const games = [
     image: "assets/img/TshirtGame.jpg",
     link: "https://people.ey.com/personal/agustin_villar_gds_ey_com/_layouts/15/onedrive.aspx?viewid=65e0aea4%2De09d%2D48f5%2Da83f%2Db5e77e7fea96&ga=1&id=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FPoner%20camiseta%2FT%2Dshirt%20change%20istructions%2Epdf&parent=%2Fpersonal%2Fagustin%5Fvillar%5Fgds%5Fey%5Fcom%2FDocuments%2FFY%2026%2FADMIN%2FACTIVIDADES%2FPoner%20camiseta",
   },
-
+ {
+    title: "Guess the movie",
+    image: "assets/img/guessTheMovie.jpg",
+    link: "",     
+  },
+     {
+    title: "Bingo",
+    image: "assets/img/bingo.jpg",
+    link: "",     
+  },
+ {
+    title: "The Numbers Game",
+    image: "assets/img/numbers.jpg",
+    link: "",     
+  },
 ];
 // Crear bloques de color
 const bg = document.querySelector('.color-blocks');
@@ -65,6 +79,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
