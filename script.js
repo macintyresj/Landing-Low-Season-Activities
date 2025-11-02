@@ -1,4 +1,9 @@
 const games = [
+  {
+    title: "Random Name Generator",
+    image: "assets/img/name.png",
+    link: "",     
+  },
     {
     title: "Aproximation",
     image:  "assets/img/Aproximation.jpg",
@@ -79,6 +84,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
