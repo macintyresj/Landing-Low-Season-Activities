@@ -46,17 +46,17 @@ const games = [
   },
  {
     title: "Guess the movie",
-    image: "assets/img/guessTheMovie.jpg",
+    image: "assets/img/guessTheMovie.png",
     link: "",     
   },
      {
     title: "Bingo",
-    image: "assets/img/bingo.jpg",
+    image: "assets/img/bingo.png",
     link: "",     
   },
  {
     title: "The Numbers Game",
-    image: "assets/img/numbers.jpg",
+    image: "assets/img/numbers.png",
     link: "",     
   },
 ];
@@ -79,6 +79,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
