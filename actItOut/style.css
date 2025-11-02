@@ -42,13 +42,25 @@ body {
 }
 
 .popup-content {
+    display:flex;
+    width:80vw;
+    flex-direction: column; 
     background: #444;
-    padding: 30px;
     border-radius: 10px;
     text-align: center;
 }
 
 .popup-image {
-    width: 200px;
-    margin: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+}
+ button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #cc0;
+    color: #333;
 }
