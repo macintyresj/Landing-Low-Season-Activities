@@ -47,7 +47,7 @@ const games = [
  {
     title: "Guess the movie",
     image: "assets/img/guessTheMovie.png",
-    link: "",     
+    link: "https://people.ey.com/:p:/r/personal/agustin_villar_gds_ey_com/_layouts/15/Doc.aspx?sourcedoc=%7B2C42E053-9DA4-40AA-B0A1-46C960F99CB0%7D&file=Presentaci%C3%B3n1.pptx&action=edit&mobileredirect=true",     
   },
      {
     title: "Bingo",
@@ -84,6 +84,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
