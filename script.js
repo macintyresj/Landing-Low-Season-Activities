@@ -52,12 +52,12 @@ const games = [
      {
     title: "Bingo",
     image: "assets/img/bingo.png",
-    link: "",     
+    link: "Bingo/index.html",     
   },
  {
     title: "The Numbers Game",
     image: "assets/img/numbers.png",
-    link: "Bingo/index.html",     
+    link: "",     
   },
 { 
     title: "I sit, I stand",
@@ -84,6 +84,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
