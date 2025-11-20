@@ -56,7 +56,7 @@ const games = [
   },
     {
     title: "Pictionary",
-    image: "assets/img/pictionary.png",
+    image: "assets/img/pictionary.jpg",
     link: "Pictionary/pictionary.html"
   },
  {
@@ -89,6 +89,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
