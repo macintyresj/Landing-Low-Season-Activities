@@ -20,12 +20,6 @@ function updateDisplay() {
     centisDisplay.textContent = centis < 10 ? "0" + centis : centis;
 }
 
-// Mostrar pop-up inicial
-startGameBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    updateDisplay();
-});
-
 // START
 startBtn.addEventListener('click', () => {
     clearInterval(interval);
@@ -51,5 +45,6 @@ restartBtn.addEventListener('click', () => {
     totalCentis = 6000;
     updateDisplay();
 });
+
 
 
