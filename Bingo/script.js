@@ -9,7 +9,7 @@ const bingoAmountEl =
   document.querySelector("#bingo-value .amount") ||
   document.getElementById("bingo-value");
 const line1AmountEl = document.querySelector("#line1-value .amount");
-// const line2AmountEl = document.querySelector('#line2-value .amount');
+const lineSAmountEl = document.querySelector('#lineS-value .amount');
 const collectedAmountEl = document.getElementById("collected-amount");
 
 // formato de número con separador de miles
@@ -49,17 +49,21 @@ function calculateAndRender(cartones) {
 
   const bingo = Math.floor(total * 0.87 / 4);
   const line1 = Math.floor(total * 0.13 / 4);
+  const lineS = Math.floor(total * 0.13 / 2);
   // Valores actuales mostrados (para animar desde ahí)
   const currentBingo =
     parseInt(bingoAmountEl.textContent.replace(/\./g, "")) || 0;
   const currentLine1 =
     parseInt(line1AmountEl.textContent.replace(/\./g, "")) || 0;
+  const currentLineS =
+    parseInt(lineSAmountEl.textContent.replace(/\./g, "")) || 0;  
   const currentTotal =
     parseInt(collectedAmountEl.textContent.replace(/\./g, "")) || 0;
 
   // Animar hacia el nuevo valor
   animateValue(bingoAmountEl, currentBingo, bingo, 2000);
   animateValue(line1AmountEl, currentLine1, line1, 2000);
+  animateValue(lineSAmountEl, currentLineS, lineS, 2000);
   animateValue(collectedAmountEl, currentTotal, total, 2000);
 }
 
@@ -75,4 +79,5 @@ ticketsInput.addEventListener("input", (e) => {
 ticketsInput.addEventListener("change", (e) => {
   calculateAndRender(e.target.value);
 });
+
 
