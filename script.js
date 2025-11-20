@@ -15,6 +15,11 @@ const games = [
     link: "https://macintyresj.github.io/FSO-Games-Trivia-Tablero-/",
   },
   {
+    title: "Pictionary",
+    image: "assets/img/pictionary.png",
+    link: "actItOut/actItOut.html"
+  },
+  {
     title: "Preguntados",
     image: "assets/img/preguntados.png",
     link: "https://macintyresj.github.io/FSO-Games-Trivia/",
@@ -84,6 +89,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
