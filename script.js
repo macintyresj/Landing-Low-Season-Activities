@@ -57,7 +57,7 @@ const games = [
     {
     title: "Pictionary",
     image: "assets/img/pictionary.png",
-    link: "actItOut/actItOut.html"
+    link: "Pictionary/pictionary.html"
   },
  {
     title: "The Numbers Game",
@@ -89,6 +89,7 @@ games.forEach(game => {
   card.addEventListener('click', () => window.open(game.link, '_blank'));
   container.appendChild(card);
 });
+
 
 
 
