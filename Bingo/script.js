@@ -47,8 +47,8 @@ function calculateAndRender(cartones) {
   // Cálculo de puntos
   const total = cartones * POINTS_PER_TICKET;
 
-  const bingo = Math.floor(total * 0.8 / 3);
-  const line1 = Math.floor(total * 0.1 / 3);
+  const bingo = Math.floor(total * 0.87 / 4);
+  const line1 = Math.floor(total * 0.13 / 4);
   // Valores actuales mostrados (para animar desde ahí)
   const currentBingo =
     parseInt(bingoAmountEl.textContent.replace(/\./g, "")) || 0;
@@ -75,3 +75,4 @@ ticketsInput.addEventListener("input", (e) => {
 ticketsInput.addEventListener("change", (e) => {
   calculateAndRender(e.target.value);
 });
+
