@@ -51,6 +51,7 @@ pauseBtn.addEventListener('click', () => {
 // RESTART
 restartBtn.addEventListener('click', () => {
     clearInterval(interval);
-    totalCentis = 18000;
+    totalCentis = 6000;
     updateDisplay();
 });
+
