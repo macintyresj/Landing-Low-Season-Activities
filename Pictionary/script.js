@@ -1,6 +1,3 @@
-let popup = document.getElementById('popup');
-let startGameBtn = document.getElementById('startGame');
-
 let startBtn = document.getElementById('start');
 let pauseBtn = document.getElementById('pause');
 let restartBtn = document.getElementById('restart');
@@ -9,7 +6,7 @@ let minutesDisplay = document.getElementById('minutes');
 let secondsDisplay = document.getElementById('seconds');
 let centisDisplay = document.getElementById('centis'); // nuevo span para centésimas
 
-let totalCentis = 18000; // 3 minutos = 18000 centésimas (3*60*100)
+let totalCentis = 6000; // 3 minutos = 18000 centésimas (3*60*100)
 let interval;
 
 // Función para actualizar la pantalla
@@ -54,4 +51,5 @@ restartBtn.addEventListener('click', () => {
     totalCentis = 6000;
     updateDisplay();
 });
+
 
