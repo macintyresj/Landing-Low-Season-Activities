@@ -5,6 +5,8 @@ const POINTS_PER_TICKET = 10000; // 10.000 pts por cartón
 
 // Elementos DOM
 const ticketsInput = document.getElementById("tickets");
+const bingosInput = document.getElementById("bingos");
+
 const bingoAmountEl =
   document.querySelector("#bingo-value .amount") ||
   document.getElementById("bingo-value");
@@ -40,16 +42,16 @@ function animateValue(element, start, end, duration) {
   requestAnimationFrame(update);
 }
 
-function calculateAndRender(cartones) {
+function calculateAndRender(cartones, bingos) {
   // Normalizar entrada
-  cartones = Math.max(0, Math.floor(Number(cartones) || 0));
+  cartones = Math.max(0, Math.floor(Number(cartones, bingos) || 0));
 
   // Cálculo de puntos
-  const total = cartones * POINTS_PER_TICKET;
+  const total = cartones * POINTS_PER_TICKET /bingos;
 
-  const bingo = Math.floor(total * 1.14 * 0.85 / 4);
-  const line1 = Math.floor(total * 1.14 * 0.15 / 4);
-  const lineS = Math.floor(total * 1.14 * 0.15 / 2);
+  const bingo = Math.floor(total * 1.14 * 0.85);
+  const line1 = Math.floor(total * 1.14 * 0.15);
+  const lineS = Math.floor(total * 1.14 * 0.15 * 2);
   // Valores actuales mostrados (para animar desde ahí)
   const currentBingo =
     parseInt(bingoAmountEl.textContent.replace(/\./g, "")) || 0;
@@ -74,11 +76,20 @@ ticketsInput.addEventListener("input", (e) => {
   const v = e.target.value;
   calculateAndRender(v);
 });
+ticketsBingos.addEventListener("input", (e) => {
+  const v = e.target.value;
+  calculateAndRender(v);
+});
 
 // accesibilidad: permitir flechas y up/down
 ticketsInput.addEventListener("change", (e) => {
   calculateAndRender(e.target.value);
 });
+
+ticketsBingos.addEventListener("change", (e) => {
+  calculateAndRender(e.target.value);
+});
+
 
 
 
